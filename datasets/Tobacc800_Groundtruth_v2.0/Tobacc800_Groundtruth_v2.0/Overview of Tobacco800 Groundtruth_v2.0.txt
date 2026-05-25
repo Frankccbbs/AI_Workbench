@@ -1,0 +1,31 @@
+Overview of Tobacco800 Groundtruth Version 2.0
+
+The groundtruth of the Tobacco800 document image database was created by the Language and Media Processing Laboratory, University of Maryland. This new release includes the groundtruth information on both signatures and logos in this large complex document image collection. 
+
+Including the location and dimensions of each visual entity, the XML groundtruth v2.0 also contains the true identity of each signature instance, enabling evaluation of signature matching and authorship attribution.
+
+
+Please include the following reference(s) when citing the Tobacco800 database:
+
+[1] Guangyu Zhu, Yefeng Zheng, David Doermann,and Stefan Jaeger. Multi-scale Structural Saliency for Signature Detection. In Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR 2007), pp. 1©\8, 2007.
+
+[2] Guangyu Zhu and David Doermann. Automatic Document Logo Detection. In Proc. 9th International Conf. Document Analysis and Recognition (ICDAR 2007), pp. 864©\868, 2007.
+
+
+The BibTex entries are as follows:
+
+@inproceedings{Zhu-CVPR07,
+	AUTHOR	= {Guangyu Zhu and Yefeng Zheng and David Doermann and Stefan Jaeger},
+	TITLE 	= {Multi-scale Structural Saliency for Signature Detection},
+	BOOKTITLE = {In Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR 2007)},
+	PAGES 	= {1--8},
+	YEAR 	= {2007},
+}
+
+@inproceedings{Zhu-ICDAR07,
+	AUTHOR 	= {Guangyu Zhu and David Doermann},
+	TITLE 	= {Automatic Document Logo Detection},
+	BOOKTITLE = {In Proc. 9th International Conf. Document Analysis and Recognition (ICDAR 2007)},
+	PAGES 	= {864--868},
+	YEAR 	= {2007},
+}

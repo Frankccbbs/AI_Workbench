@@ -1,0 +1,435 @@
+{
+  "aah97e00-page02_2": {
+    "detected_at": "2026-05-17T14:47:34.962252+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 55.2,
+        "y_pct": 24.3,
+        "w_pct": 25.3,
+        "h_pct": 10.2
+      }
+    ]
+  },
+  "aam09c00": {
+    "detected_at": "2026-05-17T14:48:47.843275+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 47.8,
+        "y_pct": 61.2,
+        "w_pct": 43.0,
+        "h_pct": 7.6
+      }
+    ]
+  },
+  "aao54e00_2": {
+    "detected_at": "2026-05-17T14:50:37.653163+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 58.8,
+        "y_pct": 22.1,
+        "w_pct": 24.7,
+        "h_pct": 4.4
+      }
+    ]
+  },
+  "adh36e00_2": {
+    "detected_at": "2026-05-16T14:59:51.958147+00:00",
+    "model": "gpt-5.4-mini",
+    "scale": 0.5,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 49.1,
+        "y_pct": 82.4,
+        "w_pct": 21.6,
+        "h_pct": 9.6
+      }
+    ]
+  },
+  "rji44a00": {
+    "detected_at": "2026-05-16T15:09:29.915964+00:00",
+    "model": "qwen3.6-plus",
+    "scale": 0.75,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 32.78,
+        "y_pct": 45.03,
+        "w_pct": 22.33,
+        "h_pct": 2.55
+      },
+      {
+        "x_pct": 60.45,
+        "y_pct": 44.03,
+        "w_pct": 29.18,
+        "h_pct": 3.45
+      }
+    ]
+  },
+  "tfv39d00": {
+    "detected_at": "2026-05-17T13:55:31.360223+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 42.0,
+        "y_pct": 85.0,
+        "w_pct": 30.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "agw39d00": {
+    "detected_at": "2026-05-16T15:22:13.380276+00:00",
+    "model": "qwen3.6-plus",
+    "scale": 0.75,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 52.734,
+        "y_pct": 42.446,
+        "w_pct": 13.73,
+        "h_pct": 4.056
+      },
+      {
+        "x_pct": 13.333,
+        "y_pct": 48.889,
+        "w_pct": 32.083,
+        "h_pct": 7.153
+      },
+      {
+        "x_pct": 51.458,
+        "y_pct": 50.347,
+        "w_pct": 32.917,
+        "h_pct": 5.069
+      },
+      {
+        "x_pct": 18.646,
+        "y_pct": 56.25,
+        "w_pct": 25.104,
+        "h_pct": 4.375
+      },
+      {
+        "x_pct": 52.396,
+        "y_pct": 56.458,
+        "w_pct": 25.104,
+        "h_pct": 5.139
+      },
+      {
+        "x_pct": 18.438,
+        "y_pct": 62.778,
+        "w_pct": 25.208,
+        "h_pct": 3.542
+      },
+      {
+        "x_pct": 54.062,
+        "y_pct": 61.944,
+        "w_pct": 17.292,
+        "h_pct": 4.306
+      },
+      {
+        "x_pct": 18.021,
+        "y_pct": 69.375,
+        "w_pct": 23.125,
+        "h_pct": 6.25
+      }
+    ]
+  },
+  "ail70a00": {
+    "detected_at": "2026-05-16T15:23:49.432254+00:00",
+    "model": "qwen3.6-plus",
+    "scale": 0.75,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 51.3,
+        "y_pct": 54.5,
+        "w_pct": 17.0,
+        "h_pct": 4.0
+      }
+    ]
+  },
+  "aeb95e00": {
+    "detected_at": "2026-05-17T12:50:38.949318+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 45.0,
+        "y_pct": 91.0,
+        "w_pct": 35.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "aao54e00_1": {
+    "detected_at": "2026-05-17T14:49:37.256611+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "ahs60f00": {
+    "detected_at": "2026-05-17T12:52:41.912472+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 55.0,
+        "y_pct": 72.0,
+        "w_pct": 25.0,
+        "h_pct": 5.0
+      }
+    ]
+  },
+  "aah97e00-page02_1": {
+    "detected_at": "2026-05-17T14:46:26.030105+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "abm69c00": {
+    "detected_at": "2026-05-17T14:51:17.211651+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 38.6,
+        "y_pct": 55.3,
+        "w_pct": 35.2,
+        "h_pct": 5.0
+      }
+    ]
+  },
+  "acr64d00": {
+    "detected_at": "2026-05-17T14:52:33.465449+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 51.5,
+        "y_pct": 79.0,
+        "w_pct": 26.5,
+        "h_pct": 7.0
+      }
+    ]
+  },
+  "adh36e00-page2_1": {
+    "detected_at": "2026-05-17T14:53:17.114821+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "adh36e00-page2_2": {
+    "detected_at": "2026-05-17T14:57:54.808836+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 48.0,
+        "y_pct": 74.0,
+        "w_pct": 35.0,
+        "h_pct": 8.0
+      }
+    ]
+  },
+  "adh36e00_1": {
+    "detected_at": "2026-05-17T13:57:03.854407+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "adn64a00-page02_1": {
+    "detected_at": "2026-05-17T13:57:11.102428+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "adn64a00-page02_2": {
+    "detected_at": "2026-05-17T13:57:18.180554+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "adn64a00-page02_3": {
+    "detected_at": "2026-05-17T13:57:27.310367+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 50.0,
+        "y_pct": 31.0,
+        "w_pct": 35.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "adp7aa00": {
+    "detected_at": "2026-05-17T13:57:34.277970+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 8.0,
+        "y_pct": 72.0,
+        "w_pct": 28.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "adq65f00": {
+    "detected_at": "2026-05-17T14:23:40.248656+00:00",
+    "model": "qwen3.5-plus",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 53.2,
+        "y_pct": 51.3,
+        "w_pct": 8.0,
+        "h_pct": 3.5
+      }
+    ]
+  },
+  "aee44c00": {
+    "detected_at": "2026-05-17T13:57:47.801436+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 45.0,
+        "y_pct": 79.0,
+        "w_pct": 25.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "aeq93a00": {
+    "detected_at": "2026-05-17T13:57:54.478771+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 55.0,
+        "y_pct": 82.0,
+        "w_pct": 25.0,
+        "h_pct": 4.0
+      }
+    ]
+  },
+  "aex05f00_1": {
+    "detected_at": "2026-05-17T13:58:01.318731+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 52.0,
+        "y_pct": 76.0,
+        "w_pct": 30.0,
+        "h_pct": 6.0
+      }
+    ]
+  },
+  "aex05f00_2": {
+    "detected_at": "2026-05-17T13:58:07.427107+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 55.0,
+        "y_pct": 72.0,
+        "w_pct": 18.0,
+        "h_pct": 9.0
+      }
+    ]
+  },
+  "afm90c00-first_1": {
+    "detected_at": "2026-05-17T13:58:14.836164+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "afm90c00-first_2": {
+    "detected_at": "2026-05-17T13:58:22.833142+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 52.0,
+        "y_pct": 60.0,
+        "w_pct": 25.0,
+        "h_pct": 7.0
+      }
+    ]
+  },
+  "aik94f00-page02_1": {
+    "detected_at": "2026-05-17T13:58:29.196195+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "aik94f00-page02_2": {
+    "detected_at": "2026-05-17T13:58:36.130445+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 45.0,
+        "y_pct": 85.0,
+        "w_pct": 40.0,
+        "h_pct": 7.0
+      }
+    ]
+  },
+  "aji32e00-page02_1": {
+    "detected_at": "2026-05-17T13:58:43.534678+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": false,
+    "signatures": []
+  },
+  "aji32e00-page02_2": {
+    "detected_at": "2026-05-17T13:58:51.252909+00:00",
+    "model": "claude-sonnet-4-5-20250929",
+    "scale": 1.0,
+    "has_signatures": true,
+    "signatures": [
+      {
+        "x_pct": 45.0,
+        "y_pct": 72.0,
+        "w_pct": 35.0,
+        "h_pct": 8.0
+      }
+    ]
+  }
+}

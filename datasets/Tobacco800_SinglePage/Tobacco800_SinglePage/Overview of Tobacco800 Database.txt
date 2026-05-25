@@ -1,0 +1,42 @@
+Overview of Tobacco800 database:
+
+Public accessible document image collection with realistic scope and complexity is important to the document image analysis and search community. Tobacco800 is a public subset of the complex document image processing (CDIP) test collection constructed by Illinois Institute of Technology, assembled from 42 million pages of documents (in 7 million multi-page TIFF images) released by tobacco companies under the Master Settlement Agreement and originally hosted at UCSF.
+
+Tobacco800, composed of 1290 document images, is a realistic database for document image analysis and retrieval as these documents were collected and scanned using a wide variety of equipment over time. In addition, a significant percentage of Tobacco800 are consecutively numbered multi-page business documents, making it a valuable testbed for various content-based document retrieval approaches. Resolutions of documents in Tobacco800 vary significantly from 150 to 300 DPI and the dimensions of images range from 1200 by 1600 to 2500 by 3200 pixels.
+
+
+Please include the following reference(s) when citing the Tobacco800 database:
+
+[1] D. Lewis, G. Agam, S. Argamon, O. Frieder, D. Grossman, and J. Heard, ¡°Building a test collection for complex document
+information processing,¡± in Proc. Annual Int. ACM SIGIR Conference, 2006, pp. 665¨C666.
+
+[2] G. Agam, S. Argamon, O. Frieder, D. Grossman, and D. Lewis, The Complex Document Image Processing (CDIP) test
+collection, Illinois Institute of Technology, 2006. [Online]. Available: http://ir.iit.edu/projects/CDIP.html
+
+[3] The Legacy Tobacco Document Library (LTDL), University of California, San Francisco, 2007. [Online]. Available:
+http://legacy.library.ucsf.edu/
+
+Their BibTex entries are as follows:
+
+@manual{CDIP,
+    AUTHOR = {G. Agam and S. Argamon and O. Frieder and D. Grossman and D. Lewis},
+    TITLE = {The Complex Document Image Processing (\uppercase{CDIP}) test collection},
+    ORGANIZATION = {Illinois Institute of Technology},
+    URL = {http://ir.iit.edu/projects/CDIP.html},
+    YEAR= {2006},
+}
+
+@inproceedings{SIGIR-06,
+     author = {D. Lewis and G. Agam and S. Argamon and O. Frieder and D. Grossman and J. Heard},
+     title = {Building a test collection for complex document information processing},
+     BOOKTITLE = {In Proc. 29th Annual Int. ACM SIGIR Conf.},
+     pages = {665--666},
+     year = {2006},
+}
+
+@manual{LTDL,
+    TITLE = {The Legacy Tobacco Document Library (\uppercase{LTDL})},
+    ORGANIZATION = {University of California, San Francisco},
+    URL = {http://legacy.library.ucsf.edu/},
+    YEAR= {2007},
+}

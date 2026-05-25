@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobacco800 · 签名标注可视化</title>
+  <meta name="description" content="Tobacco800 文档数据集签名区域可视化与 AI 检测工具。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M9 9h6M9 13h4"/>
+          <rect x="12" y="15" width="5" height="3" rx="0.5" stroke-dasharray="2 0"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Tobacco800</span>
+        <span class="brand-sub">签名标注可视化</span>
+      </div>
+    </div>
+    <div class="header-stats" id="headerStats">
+      <div class="stat-chip loading-pulse">加载中…</div>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn header-btn-ghost" id="btnStats" title="命中率统计">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        统计
+      </button>      <button class="header-btn" id="btnBatch" title="批量 AI 检测">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        批量检测
+      </button>
+      <button class="header-btn header-btn-ghost" id="btnSettings" title="设置">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/></svg>
+        设置
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ── Main layout ────────────────────────────────────────── -->
+
+  <div class="app-body">
+
+    <!-- Left: file list -->
+    <aside class="panel panel-left">
+      <div class="panel-inner">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="tab active" data-filter="all">全部</button>
+          <button class="tab" data-filter="signature">
+            <span class="dot dot-orange"></span>有签名
+          </button>
+          <button class="tab" data-filter="ai">
+            <span class="dot dot-purple"></span>已检测
+          </button>
+          <button class="tab" data-filter="hit">✅ 命中</button>
+          <button class="tab" data-filter="miss">❌ 漏检</button>
+          <button class="tab" data-filter="skewed">⚠️ 位偏</button>
+        </div>
+        <ul class="file-list" id="fileList">
+          <li class="file-item-skeleton"></li>
+          <li class="file-item-skeleton"></li>
+          <li class="file-item-skeleton"></li>
+          <li class="file-item-skeleton"></li>
+          <li class="file-item-skeleton"></li>
+        </ul>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </aside>
+
+    <!-- Center: viewer -->
+    <main class="panel panel-center">
+      <div class="viewer-toolbar" id="viewerToolbar">
+        <div class="toolbar-left">
+          <span class="toolbar-filename" id="toolbarFilename">选择左侧文件以预览</span>
+        </div>
+        <div class="toolbar-right">
+          <button class="tool-btn" id="btnZoomOut" title="缩小">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1z"/></svg>
+          </button>
+          <span class="zoom-label" id="zoomLabel">—</span>
+          <button class="tool-btn" id="btnZoomIn" title="放大">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 010 2h-3v3a1 1 0 01-2 0v-3H6a1 1 0 010-2h3V6a1 1 0 011-1z"/></svg>
+          </button>
+          <button class="tool-btn" id="btnFit" title="适应窗口">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 3h5v2H5v3H3V3zm12 0h2v5h-2V5h-3V3h3zm-12 9H3v5h5v-2H5v-3zm9 3v2h3v-5h-2v3h-1z"/></svg>
+          </button>
+          <div class="tool-divider"></div>
+          <label class="toggle-label" title="Ground Truth 标注">
+            <input type="checkbox" id="toggleLogos" checked /><span>Logo</span>
+          </label>
+          <label class="toggle-label" title="Ground Truth 标注">
+            <input type="checkbox" id="toggleSigs" checked /><span>签名GT</span>
+          </label>
+          <label class="toggle-label toggle-ai" title="AI 检测结果">
+            <input type="checkbox" id="toggleAI" checked /><span>AI结果</span>
+          </label>
+          <div class="tool-divider"></div>
+          <button class="tool-btn tool-btn-ai" id="btnDetect" title="AI 检测当前文档" disabled>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="viewer-container" id="viewerContainer">
+        <div class="viewer-empty" id="viewerEmpty">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="8" y="6" width="32" height="36" rx="2"/>
+            <path d="M16 16h16M16 22h12"/>
+            <rect x="24" y="30" width="10" height="6" rx="1" stroke-dasharray="3 1"/>
+          </svg>
+          <p>从左侧选择文档</p>
+        </div>
+        <div class="viewer-loading" id="viewerLoading" hidden>
+          <div class="spinner"></div>
+          <p id="loadingText">正在加载…</p>
+        </div>
+        <div class="viewer-viewport" id="viewerViewport" hidden>
+          <img id="mainImage" alt="文档图片" />
+          <canvas id="bboxCanvas"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right: annotation details -->
+    <aside class="panel panel-right">
+      <div class="panel-inner">
+        <div class="detail-empty" id="detailEmpty"><p>选择文档后显示标注详情</p></div>
+        <div id="detailContent" hidden>
+          <div class="detail-section">
+            <div class="detail-file-name" id="detailFileName">—</div>
+            <div class="detail-meta" id="detailMeta">—</div>
+          </div>
+          <div class="detail-section" id="sigSection">
+            <div class="section-title">
+              <span class="dot dot-orange"></span>签名 GT
+              <span class="count-badge" id="sigCountBadge">0</span>
+            </div>
+            <ul class="annotation-list" id="sigList"></ul>
+          </div>
+          <div class="detail-section" id="logoSection">
+            <div class="section-title">
+              <span class="dot dot-blue"></span>Logo GT
+              <span class="count-badge" id="logoCountBadge">0</span>
+            </div>
+            <ul class="annotation-list" id="logoList"></ul>
+          </div>
+          <div class="detail-section" id="aiSection" hidden>
+            <div class="section-title">
+              <span class="dot dot-purple"></span>AI 检测结果
+              <span class="count-badge count-badge-ai" id="aiCountBadge">0</span>
+            </div>
+            <ul class="annotation-list" id="aiList"></ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ── Settings Drawer ────────────────────────────────────── -->
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <div class="drawer" id="settingsDrawer" hidden>
+    <div class="drawer-header">
+      <span class="drawer-title">⚙ 设置</span>
+      <button class="drawer-close" id="btnCloseSettings">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="form-group">
+        <label class="form-label">API 代理地址</label>
+        <input class="form-input" id="cfgApiUrl" type="text" placeholder="https://api.openai.com/v1" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" id="cfgApiKey" type="password" placeholder="sk-…" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">模型</label>
+        <div class="model-row">
+          <select class="form-select" id="cfgModel" style="flex:1">
+            <option value="">— 先获取列表 —</option>
+          </select>
+          <button class="btn-fetch-models" id="btnFetchModels" title="从 API 获取可用模型列表">获取列表</button>
+        </div>
+        <div class="form-hint" id="modelHint"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">发送分辨率</label>
+        <select class="form-select" id="cfgScale">
+          <option value="0.25">25%（最省钱）</option>
+          <option value="0.5" selected>50%（推荐）</option>
+          <option value="0.75">75%</option>
+          <option value="1.0">100%（原图）</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">检测 Prompt</label>
+        <textarea class="form-textarea" id="cfgPrompt" rows="14"></textarea>
+      </div>
+      <button class="btn-save" id="btnSaveSettings">保存设置</button>
+    </div>
+  </div>
+
+  <!-- ── Batch Modal ─────────────────────────────────────────── -->
+  <div class="modal-overlay" id="batchOverlay" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <span class="modal-title">🤖 批量 AI 检测</span>
+        <button class="drawer-close" id="btnCloseBatch">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="batch-info" id="batchInfo">—</div>
+        <div class="batch-skip" id="batchSkip" hidden></div>
+        <div class="progress-wrap" id="progressWrap" hidden>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">0 / 0</div>
+        </div>
+        <div class="batch-error" id="batchError" hidden></div>
+        <div class="modal-actions">
+          <button class="btn-primary" id="btnStartBatchSkip">仅检测未跑过的</button>
+          <button class="btn-primary" id="btnStartBatchForce" style="background:var(--orange)">强制重新跑全部</button>
+          <button class="btn-danger" id="btnStopBatch" hidden>⏹ 停止</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── Stats Modal ─────────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="statsOverlay" hidden>
+    <div class="modal-card stats-card">
+      <div class="modal-header">
+        <span class="modal-title">📊 命中率统计</span>
+        <button class="drawer-close" id="btnCloseStats">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="stats-threshold-row">
+          <label class="form-label" style="margin:0">GT覆盖率阈值</label>
+          <input type="range" id="thresholdSlider" min="10" max="90" step="5" value="50" class="threshold-slider" />
+          <span class="threshold-val" id="thresholdVal">50%</span>
+        </div>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stats-loading">正在计算…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
